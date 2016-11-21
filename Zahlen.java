@@ -22,7 +22,7 @@ public class Zahlen implements IZahlen {
 	}
 
 	/**
-	 * Berechnet die Summe von allen hinzugefï¿½gten Zahlen.
+	 * Berechnet die Summe von allen hinzugefügten Zahlen.
 	 * 
 	 * @return Die Summe aller Zahlen.
 	 */
@@ -37,30 +37,32 @@ public class Zahlen implements IZahlen {
 	}
 
 	/**
-	 * Gibt das Minimumm allen hinzugefï¿½gten Zahlen aus.
+	 * Gibt das Minimumm allen hinzugefügten Zahlen aus.
 	 * 
 	 * @return Kleinste Zahl
 	 */
 	@Override
 	public double getMinimum() {
 		Iterator<Double> i = value.iterator();
-		return i.next();
+		i.next();
+		for (int j = 0; j < value.size(); j++) {
+			if (j < value.size()) {
+				return i.next();
+			}
+			i.next();
+		}
+		return 0.0;
 	}
 
 	/**
-	 * Gibt das Maximum aller hinzugefï¿½gten Zahlen aus.
+	 * Gibt das Maximum aller hinzugefügten Zahlen aus.
 	 * 
-	 * @return Grï¿½ï¿½te Zahl
+	 * @return Größte Zahl
 	 */
 	@Override
 	public double getMaximum() {
 		Iterator<Double> i = value.iterator();
-		for(int j = 0; j < value.size(); j++){
-			if( j == value.size()){
-				return i.next();
-			}
-		}
-		return 0;
+		return i.next();
 	}
 
 	@Override
